@@ -16,9 +16,7 @@ const ServerListLayout = ({ servers, children }: any) => (
         ))}
       </ul>
     </div>
-    <div className="flex-1 bg-gray-200 h-full overflow-y-auto p-4">
-      {children}
-    </div>
+    <div className="flex-1 bg-gray-200 h-full overflow-y-auto">{children}</div>
   </div>
 );
 

@@ -8,7 +8,10 @@ export interface MessageProps {
 
 function Message({ user_id, avatar, content, createdAt, id }: MessageProps) {
   return (
-    <div className="text-text-base px-3 py-1 w-full bottom-0 text-black text-left relative float-left">
+    <div
+      className="text-text-base px-3 py-1 w-full bottom-0 text-black text-left relative float-left"
+      style={{ margin: "8px" }}
+    >
       <img
         src={avatar}
         className="w-10 h-10 rounded-full absolute top-0 left-0"
