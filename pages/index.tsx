@@ -7,11 +7,5 @@ import Message from "@/components/message";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return (
-    <>
-      <main>
-        <Message user_id="" content="HELl" createdAt="399" />
-      </main>
-    </>
-  );
+  return <main></main>;
 }

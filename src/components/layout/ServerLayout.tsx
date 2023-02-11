@@ -1,10 +1,10 @@
 import React from "react";
 
-const ServerListLayout = ({ servers, children }) => (
+const ServerListLayout = ({ servers, children }: any) => (
   <div className="flex flex-row h-screen">
     <div className="w-64 bg-indigo-600 h-full">
       <ul className="mt-4">
-        {servers.map((server) => (
+        {servers.map((server: any) => (
           <li key={server.name} className="p-2">
             <div className="flex items-center">
               <div className="w-6 h-6 mr-2">
