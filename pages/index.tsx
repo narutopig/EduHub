@@ -3,9 +3,14 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Message from "@/components/message";
+import SignInWithGoogle from "@/components/authbutton";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <SignInWithGoogle></SignInWithGoogle>
+    </main>
+  );
 }

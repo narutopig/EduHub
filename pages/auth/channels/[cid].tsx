@@ -27,6 +27,7 @@ function Channel({ name }: ChannelProps) {
           id: doc.id,
         }));
         setMessages(dataArray);
+        window.scrollTo(0, document.body.scrollHeight);
       }
     );
 
@@ -37,7 +38,7 @@ function Channel({ name }: ChannelProps) {
     <ServerListLayout servers={servers}>
       <div className="flex h-screen flex-direction-column justify-content-end">
         <h1
-          className="w-full font-bold bg-slate-400"
+          className="w-full font-bold bg-slate-400 fixed top-0 left-0 p-4 shadow-md z-10"
           style={{ position: "sticky", top: 0 }}
         >{`#${name}`}</h1>
         <div
@@ -64,7 +65,7 @@ export async function getServerSideProps(context: NextPageContext) {
   return {
     props: {
       name: data.name,
-    }, // will be passed to the page component as props
+    },
   };
 }
 
