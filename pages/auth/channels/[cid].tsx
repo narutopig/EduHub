@@ -25,6 +25,9 @@ function Channel({ name }: ChannelProps) {
         const dataArray = snapshot.docs.map((doc) => ({
           ...(doc.data() as MessageProps),
           id: doc.id,
+          avatar:
+            doc.data().avatar ??
+            "http://ronaldmottram.co.nz/wp-content/uploads/2019/01/default-user-icon-8-300x300.jpg",
         }));
         setMessages(dataArray);
         window.scrollTo(0, document.body.scrollHeight);
@@ -46,7 +49,7 @@ function Channel({ name }: ChannelProps) {
           style={{ display: "flex", alignItems: "flex-end" }}
         >
           {messages.map((message) => (
-            <div style={{ bottom: 0 }}>
+            <div style={{ bottom: 0, width: "100%", overflow: "auto" }}>
               <Message {...message} key={message.id} />
             </div>
           ))}
