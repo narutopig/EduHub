@@ -7,7 +7,7 @@ export interface MessageProps {
 
 function Message({ user_id, content, createdAt, id }: MessageProps) {
   return (
-    <div className="text-text-base px-3 py-1 w-full bottom-0 text-black">
+    <div className="text-text-base px-3 py-1 w-full bottom-0 text-black text-left">
       <p>{content}</p>
     </div>
   );

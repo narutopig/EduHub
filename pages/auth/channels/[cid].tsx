@@ -35,13 +35,19 @@ function Channel({ name }: ChannelProps) {
 
   return (
     <ServerListLayout servers={servers}>
-      <div className="flex h-screen">
-        <div className="w-full font-bold bg-slate-400">
-          <h1>{`#${name}`}</h1>
-        </div>
-        <div className="flex-1 overflow-y-scroll w-full">
+      <div className="flex h-screen flex-direction-column justify-content-end">
+        <h1
+          className="w-full font-bold bg-slate-400"
+          style={{ position: "sticky", top: 0 }}
+        >{`#${name}`}</h1>
+        <div
+          className="overflow-y-scroll w-full mt-3 flex-grow-1 flex-shrink-0"
+          style={{ display: "flex", alignItems: "flex-end" }}
+        >
           {messages.map((message) => (
-            <Message {...message} key={message.id} />
+            <div style={{ bottom: 0 }}>
+              <Message {...message} key={message.id} />
+            </div>
           ))}
         </div>
       </div>
