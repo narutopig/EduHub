@@ -6,7 +6,7 @@ export interface MessageProps {
 
 function Message({ user_id, content, createdAt }: MessageProps) {
   return (
-    <div className="rounded-md bg-slate-700 text-text-base px-3 py-1 w-full bottom-0">
+    <div className="bg-slate-700 text-text-base px-3 py-1 w-full bottom-0 text-white">
       <p>{content}</p>
     </div>
   );
