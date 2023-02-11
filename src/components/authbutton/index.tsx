@@ -14,12 +14,28 @@ const SignInWithGoogle = () => {
     });
   };
 
+  const handleSignOut = () => {
+    auth.signOut();
+    if (context.setUser) context.setUser(null);
+  };
+
+  if (context.user) {
+    return (
+      <button
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        onClick={handleSignOut}
+      >
+        Sign Out
+      </button>
+    );
+  }
+
   return (
     <button
       className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
       onClick={handleSignInWithGoogle}
     >
-      Sign In with Google
+      Sign In
     </button>
   );
 };
