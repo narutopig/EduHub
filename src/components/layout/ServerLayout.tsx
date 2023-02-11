@@ -1,14 +1,6 @@
-interface ServerListLayoutProps {
-  servers: Server[];
-  children: any;
-}
+import React from "react";
 
-interface Server {
-  name: string;
-  icon: string;
-}
-
-const ServerListLayout = ({ servers, children }: ServerListLayoutProps) => (
+const ServerListLayout = ({ servers, children }) => (
   <div className="flex flex-row h-screen">
     <div className="w-64 bg-indigo-600 h-full">
       <ul className="mt-4">
