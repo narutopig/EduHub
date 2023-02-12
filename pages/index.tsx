@@ -31,7 +31,7 @@ export default function Home() {
             <div className="mt-5">
               <SignInWithGoogle
                 handleClick={() => {
-                  if (context.user) router.push("/auth/main");
+                  router.push("/auth/main");
                 }}
               />
             </div>

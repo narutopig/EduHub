@@ -9,7 +9,6 @@ export default function MainPage() {
         style={{
           flexDirection: "column",
           verticalAlign: "middle",
-          border: "2px solid black",
         }}
       >
         <div style={{ margin: "auto" }}>
