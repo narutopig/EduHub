@@ -9,6 +9,7 @@ export interface WorkProps {
   description: string;
   due: string;
   createdAt: string;
+  id: string;
 }
 
 const HR = () => {
