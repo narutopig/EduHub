@@ -44,7 +44,9 @@ const Sidebar = () => {
 
   return (
     <div className="w-64 bg-indigo-600 h-full">
-      <div className="text-white font-bold m-4">Channels</div>
+      <div className="text-white font-bold m-4">
+        Channels <Link href="/auth/channels/create">+</Link>
+      </div>
       <ul className="mt-4">
         {channels.map((channel: ChannelProps) => (
           <li key={channel.id} className="p-2">
@@ -65,7 +67,9 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      <div className="text-white font-bold m-4">Assignments</div>
+      <div className="text-white font-bold m-4">
+        Assignments <Link href="/auth/work/create">+</Link>
+      </div>
       <ul className="mt-4">
         {work.map((w: WorkProps) => (
           <li key={w.id} className="p-2">
@@ -87,7 +91,9 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      <div className="text-white font-bold m-4">Notes</div>
+      <div className="text-white font-bold m-4">
+        Notes <Link href="/auth/notes/create">+</Link>
+      </div>
       <ul className="mt-4">
         {notes.map((note: NoteProps) => (
           <li key={note.id} className="p-2">
