@@ -16,6 +16,7 @@ import { AuthContext } from "@/components/authprovider";
 
 export interface ChannelProps {
   name: string;
+  id: string;
 }
 
 function Channel({ name }: ChannelProps) {
@@ -67,9 +68,12 @@ function Channel({ name }: ChannelProps) {
   const InputBox = () => {
     const inputRef = useRef<HTMLInputElement>(null);
 
+    useEffect(() => {
+      inputRef.current?.focus();
+    }, []);
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setMessage(event.target.value);
-      inputRef.current?.focus();
     };
 
     return (
@@ -79,10 +83,10 @@ function Channel({ name }: ChannelProps) {
           value={message}
           onChange={handleChange}
           placeholder="Enter message here"
-          className="px-2 py-1 border-2 border-gray-500"
+          className="px-2 py-1 border-2 border-grey-500"
           ref={inputRef}
         />
-        <button type="submit" className="px-3 py-2 ml-2 bg-grey-500 text-white">
+        <button type="submit" className="px-3 py-2 ml-2 bg-grey-500 text-red">
           Send
         </button>
       </form>
@@ -93,7 +97,7 @@ function Channel({ name }: ChannelProps) {
     <ServerListLayout servers={servers}>
       <div
         className="flex h-screen flex-direction-column justify-content-end"
-        style={{ border: "2px solid black" }}
+        style={{ padding: "8px" }}
       >
         <h1
           className="w-full font-bold bg-slate-400 fixed top-0 left-0 p-4 shadow-md z-10"
@@ -127,6 +131,7 @@ export async function getServerSideProps(context: NextPageContext) {
   const ref = await getDoc(doc(db, "/channels/" + cid));
 
   const data = ref.data() as any;
+
   return {
     props: {
       name: data.name,

@@ -4,7 +4,7 @@ import servers from "@/constants/server";
 export default function MainPage() {
   return (
     <ServerListLayout servers={servers}>
-      <div></div>
+      <div>Hi</div>
     </ServerListLayout>
   );
 }
